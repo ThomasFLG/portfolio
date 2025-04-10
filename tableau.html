@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de synthèse - BTS SIO</title>
+  <style>
+    /* Style général pour le corps de la page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Style du header */
+    header {
+      background-color: #16a085;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Bouton de retour */
+    .back-btn {
+      background-color: white;
+      color: #16a085;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-btn:hover {
+      background-color: #e0f2f1;
+    }
+
+    /* Style du tableau */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 80px 0 20px 0; /* Décalage pour éviter le header fixe */
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    /* Styles pour les en-têtes de tableau */
+    th {
+      background-color: #16a085;
+      color: white;
+      font-weight: bold;
+    }
+
+    .header {
+      background-color: #e0e0e0;
+      font-weight: bold;
+    }
+
+    /* Pour les lignes spéciales */
+    .section-title {
+      background-color: #16a085;
+      color: white;
+      font-size: 1.2rem;
+      text-align: left;
+      padding-left: 15px;
+      font-weight: bold;
+    }
+
+    /* Stylisation des cases X (cases où il y a des réalisations) */
+    td.X {
+      background-color: #16a085;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header avec bouton retour -->
+  <header>
+    <a href="index.html#portfolio" class="back-btn">← Retour aux projets</a>
+    <h1>Tableau de synthèse - BTS SIO</h1>
+    <div style="width: 100px;"></div> <!-- Pour équilibrer l'espace -->
+  </header>
+
+  <table>
+    <tr class="header">
+      <th rowspan="2">Réalisations professionnelles</th>
+      <th colspan="6">Compétences mises en œuvre</th>
+    </tr>
+    <tr class="header">
+      <th>Gérer le patrimoine informatique</th>
+      <th>Répondre aux incidents et aux demandes d’assistance</th>
+      <th>Développer la présence en ligne de l'organisation</th>
+      <th>Travailler en mode projet</th>
+      <th>Mettre à disposition des utilisateurs un service informatique</th>
+      <th>Organiser son développement professionnel</th>
+    </tr>
+
+    <tr class="section-title">
+      <td colspan="7">Réalisation en cours de formation</td>
+    </tr>
+    <tr>
+      <td>Mini web homework (vitrine BTS SAM)</td><td></td><td></td><td class="X">X</td><td class="X">X</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>Vaites partie 2 (client lourd) - Générateur de factures XML</td><td></td><td></td><td class="X">X</td><td class="X">X</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>Profil LinkedIn professionel</td><td></td><td></td><td></td><td></td><td></td><td class="X">X</td>
+    </tr>
+    <tr>
+      <td>Vaites partie 1 (site web)</td><td></td><td></td><td class="X">X</td><td class="X">X</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>Site pour l’association Parji</td><td></td><td></td><td class="X">X</td><td></td><td></td><td></td>
+    </tr>
+
+    <tr class="section-title">
+      <td colspan="7">Réalisation en milieu professionnel en cours de première année</td>
+    </tr>
+    <tr>
+      <td>Migration messages Outlook (Hôpital Joseph Ducuing)</td><td class="X">X</td><td class="X">X</td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>Mise à niveau pare-feu Stormshield (cybersécurité)</td><td class="X">X</td><td class="X">X</td><td></td><td></td><td></td><td></td>
+    </tr>
+
+    <tr class="section-title">
+      <td colspan="7">Réalisation en milieu professionnel en cours de seconde année</td>
+    </tr>
+    <tr>
+      <td>ERA - Gestion de formulaires (LiveSurvey)</td><td></td><td class="X">X</td><td></td><td></td><td class="X">X</td><td></td>
+    </tr>
+  </table>
+
+</body>
+</html>
