@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Images</title>
+    <style>
+        :root {
+            --main-color: #16a085;
+            --text-color: #333;
+            --bg-light: #f9f9f9;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: var(--main-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .back-button {
+            background-color: white;
+            color: #16a085;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1050;
+        }
+
+        .back-button:hover {
+            background-color: #e0f2f1;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .image-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+            border: 3px solid #16a085; /* Bordure autour des images */
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card img:hover {
+            transform: scale(1.1); /* Effet de zoom sur l'image */
+        }
+
+        .image-content {
+            padding: 1rem;
+        }
+
+        .image-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .image-description {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Section documents */
+        .documents-section {
+            background-color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .documents-section h2 {
+            font-size: 2rem;
+            color: var(--main-color);
+            margin-bottom: 2rem;
+        }
+
+        .doc-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .doc-links a {
+            display: block;
+            padding: 1rem 2rem;
+            background-color: var(--main-color);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .doc-links a:hover {
+            background-color: #138d75;
+        }
+
+        @media (min-width: 600px) {
+            .doc-links {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Documentation site web Help With Homework</h1>
+    </header>
+
+    <!-- Bouton Retour -->
+    <a href="index.html#portfolio" class="back-button">← Retour aux projets</a>
+
+    <section class="gallery">
+        <div class="image-card">
+            <img src="assets/img/hwh/maquette1.JPG" alt="Image 1" onclick="zoomImage(this)">
+            <div class="image-content">
+                <div class="image-title">Maquette page accueil</div>
+                <div class="image-description">On a fait une maquette de toutes les pages du site</div>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="assets/img/hwh/connexion.png" alt="Image 2" onclick="zoomImage(this)">
+            <div class="image-content">
+                <div class="image-title">Page connexion site</div>
+                <div class="image-description">Et à partir de ses maquettes, on a fait des pages html pour leur projet</div>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="assets/img/hwh/cours.png" alt="Image 3" onclick="zoomImage(this)">
+            <div class="image-content">
+                <div class="image-title">Autre page du site</div>
+                <div class="image-description">Recherche de cours particuliers</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="documents-section">
+        <h2>Documents liés au projet</h2>
+        <div class="doc-links">
+            <a href="https://docs.google.com/document/d/1vEl841TA_5UIp5FzFmi1KseZ8C15cqeSjizUhw5aph0/edit?usp=sharing" target="_blank">Cahier des charges</a>
+        </div>
+    </section>
+
+    <script>
+        // Fonction pour afficher l'image en grand lorsqu'on clique dessus
+        function zoomImage(image) {
+            const imgSrc = image.src;
+            const zoomedImage = document.createElement('img');
+            zoomedImage.src = imgSrc;
+            zoomedImage.style.position = 'fixed';
+            zoomedImage.style.top = '50%';
+            zoomedImage.style.left = '50%';
+            zoomedImage.style.transform = 'translate(-50%, -50%)';
+            zoomedImage.style.maxWidth = '90%';
+            zoomedImage.style.maxHeight = '90%';
+            zoomedImage.style.zIndex = '1000';
+            zoomedImage.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+            zoomedImage.style.cursor = 'zoom-out';
+            zoomedImage.style.border = '5px solid #16a085'; /* Contour autour de l'image agrandie */
+            document.body.appendChild(zoomedImage);
+
+            // Fermer l'image agrandie lorsque l'on clique dessus
+            zoomedImage.addEventListener('click', function() {
+                document.body.removeChild(zoomedImage);
+            });
+        }
+    </script>
+</body>
+</html>
